@@ -7,7 +7,7 @@
 - Alumno: Joshua A.R.
 - Alumno: Angel Hiram Shakur G.C.
 
-Para realizar este proyecto utilicé las siguientes tecnologías:
+Para realizar este proyecto utilizamos las siguientes tecnologías:
 - HTML5
 - CSS
 - Bootstrap
@@ -43,7 +43,7 @@ scr/database.js
 
 En este archivo habrán dos secciones que se deberá modificar el "user" y/o "password", dichas secciones están muy bien comentadas para verlas fácilmente.
 
-Además para hacer funcionar correctamente el envío del correo electrónico al registrarse, se debera configurar la parte comentada en la siguiente ruta:
+Además, para hacer funcionar correctamente el envío del correo electrónico al registrarse, se debera configurar la parte comentada en la siguiente ruta:
 
 ```
 src\lib\passport.js
