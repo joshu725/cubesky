@@ -1,2 +1,69 @@
-# cubesky
-Página local gestora de productos, para una empresa pequeña de Cubos Rubik.
+# Descripción e instrucciones del proyecto final
+
+## Datos
+
+- Materia: Programación para internet
+- Sección: D13
+- Alumno: Joshua A.R.
+- Alumno: Angel Hiram Shakur G.C.
+
+Para realizar este proyecto utilicé las siguientes tecnologías:
+- HTML5
+- CSS
+- Bootstrap
+- Javascript
+- NodeJS
+- MySQL
+
+## Instalación
+
+Es importante tener instalado NodeJS en la versión 19.8.1, para ello se deberá dirigir a la página oficial de NodeJS, descargarlo e instalarlo como cualquier programa: https://nodejs.org/en
+
+En el caso de MySQL, nosotros utilizamos la versión 8.0.32 y existen muchas maneras y herramientas que te permiten instalarlo correctamente, en nuestro caso fue mediante la página oficial de MySQL: https://www.mysql.com/
+
+## Configuración
+
+Una vez teniendo los archivos del proyecto, se deberá ejecutar la consola de comandos (CMD) en la carpeta del proyecto.
+
+Estando en la carpeta del proyecto se insertará el siguiente comando que permitirá descargar todos los modulos necesarios para el proyecto:
+
+```
+npm install
+```
+
+Se creará una carpeta llamada "node_modules" la cual contendrá todos los modulos necesarios para el proyecto.
+
+### Importante
+
+Se deberá modificar los datos necesarios que están relacionados con la conexión a la base de datos, estos se encuentran en la siguiente ruta:
+
+```
+scr/database.js
+```
+
+En este archivo habrán dos secciones que se deberá modificar el "user" y/o "password", dichas secciones están muy bien comentadas para verlas fácilmente.
+
+Además para hacer funcionar correctamente el envío del correo electrónico al registrarse, se debera configurar la parte comentada en la siguiente ruta:
+
+```
+src\lib\passport.js
+```
+
+## Ejecución
+
+Para iniciar el proyecto, se deberá ejecutar la consola de comandos (CMD) en la carpeta del proyecto.
+
+Estando en la carpeta del proyecto se insertará el siguiente comando que permitirá ejecutar el proyecto:
+
+```
+npm run dev
+```
+
+## Capturas de pantalla
+
+![1](https://i.imgur.com/06klUcd.png)
+
+
+
+
+
