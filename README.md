@@ -4,8 +4,7 @@
 
 - Materia: Programación para internet
 - Sección: D13
-- Alumno: Joshua A.R.
-- Alumno: Angel Hiram Shakur G.C.
+- Alumnos: Joshua A.R. & Angel Hiram Shakur G.C.
 
 Para realizar este proyecto utilizamos las siguientes tecnologías:
 - HTML5
