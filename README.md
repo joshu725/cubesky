@@ -60,7 +60,28 @@ npm run dev
 
 ## Capturas de pantalla
 
-![1](https://i.imgur.com/06klUcd.png)
+![landingpage1](https://i.imgur.com/06klUcd.png)
+![landingpage2](https://i.imgur.com/Y3079Y3.png)
+![iniciosesion](https://i.imgur.com/kZmnwRe.png)
+![registro](https://i.imgur.com/eENdbrC.png)
+![registro2](https://i.imgur.com/65lzJgI.png)
+![perfil](https://i.imgur.com/wlEPMUT.png)
+![catalogo](https://i.imgur.com/muWP9my.png)
+![añadircubo](https://i.imgur.com/7hlh34B.png)
+![catalogo2](https://i.imgur.com/zooVd7h.png)
+![catalogo3](https://i.imgur.com/3f8TiyU.png)
+![editarcubo](https://i.imgur.com/Rt85UjT.png)
+![proveedores](https://i.imgur.com/qvYrdCJ.png)
+![añadirproveedor](https://i.imgur.com/qsxY2RV.png)
+![editarproveedor](https://i.imgur.com/8l3hs2P.png)
+![eliminarproveedor](https://i.imgur.com/Nd59M4e.png)
+![compras](https://i.imgur.com/oQwaaq1.png)
+![registrarcompra](https://i.imgur.com/6Q0qgBk.png)
+![compras2](https://i.imgur.com/LKgVEHm.png)
+![detallescompras](https://i.imgur.com/oykdVIk.png)
+![descargarPDF](https://i.imgur.com/xJotwsU.png)
+![PDF](https://i.imgur.com/ck5wrab.png)
+
 
 
 
