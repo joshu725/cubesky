@@ -1,0 +1,87 @@
+<div class="container px-5">
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-6">
+            <div class="text-center my-5">
+                <h1 class="display-5 fw-bolder .text-dark-emphasis mb-2">Registrar compra</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container p-0 mb-5">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    {{!-- Se configura el método de envío en formularios --}}
+                    <form action="/purchases/add" method="POST">
+                        <div class="form-group">
+                            <h6>Proveedor</h6>
+                            <select class="form-control mt-0" id="proveedor" name="idProveedor" required>
+                                {{!-- Renderizar opciones de proveedores desde la base de datos --}}
+                                {{#each proveedores}}
+                                    <option value="{{this.id}}">{{this.nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <hr>
+
+                        <h6>Cubos rubik</h6>
+
+                        <div id="cubos-container">
+                            <div class="form-group">
+                                <select class="form-control" name="idCubo" required>
+                                    {{!-- Renderizar opciones de cubos desde la base de datos --}}
+                                    {{#each cubos}}
+                                        <option value="{{this.id}}">{{this.nombre}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" name="cantidad" placeholder="Cantidad" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="d-grid gap-2">
+                                <button type="button" class="btn btn-primary mb-2" onclick="addCubo()">Añadir más cubos</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-success">Registrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function addCubo() {
+        const cubosContainer = document.getElementById('cubos-container');
+        const div = document.createElement('div');
+        div.classList.add('form-group');
+        div.innerHTML = `
+            <hr>
+            <select class="form-control" name="idCubo" required>
+                {{#each cubos}}
+                    <option value="{{this.id}}">{{this.nombre}}</option>
+                {{/each}}
+            </select>
+        `;
+        cubosContainer.appendChild(div);
+
+        const inputCantidad = document.createElement('input');
+        inputCantidad.type = 'number';
+        inputCantidad.classList.add('form-control');
+        inputCantidad.name = 'cantidad';
+        inputCantidad.placeholder = 'Cantidad';
+        inputCantidad.required = true;
+        div.appendChild(inputCantidad);
+    }
+</script>

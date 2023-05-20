@@ -1,0 +1,128 @@
+<div class="container px-5">
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-6">
+            <div class="text-center my-5">
+                <h1 class="display-5 fw-bolder .text-dark-emphasis mb-2">Registrar compra</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container p-0 mb-5">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/purchases/add" method="POST">
+                        <div class="form-group">
+                            <label for="proveedor" class="fw-bolder">Proveedor</label>
+                            <select class="form-control mt-0" id="proveedor" name="idProveedor" required>
+                                <option value="" selected hidden>
+                                {{#each proveedores}}
+                                    <option value="{{this.id}}">{{this.nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <hr>
+                        <div id="cubos-container">
+                            <div class="form-group">
+                                <label for="cubo" class="fw-bolder">Cubo</label>
+                                <select class="form-control mt-0" name="idCubo">
+                                    <option value="" selected hidden>
+                                    {{#each cubos}}
+                                        <option value="{{this.id}}">{{this.nombre}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidad" class="fw-bolder">Cantidad</label>
+                                <input type="number" class="form-control mt-0" name="cantidad">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="d-grid gap-2">
+                                <button type="button" class="btn btn-primary" onclick="addCubo()">Añadir más cubos</button>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped table-bordered table-hover text-center align-middle mt-4">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-cubos">
+                                <!-- Aquí se añadirán los cubos agregados -->
+                            </tbody>
+                        </table>
+
+                        <div class="form-group">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-success" id="registrar-btn" disabled>Registrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const tablaCubos = document.getElementById('tabla-cubos');
+    const registrarBtn = document.getElementById('registrar-btn');
+    let cubosCount = 0;
+    let proveedorValue = '';
+
+    function addCubo() {
+        const proveedorSelect = document.getElementById('proveedor');
+        const cuboSelect = document.querySelector('select[name="idCubo"]');
+        const cantidadInput = document.querySelector('input[name="cantidad"]');
+
+        proveedorValue = proveedorSelect.value; // Almacenar el valor del proveedor antes de deshabilitarlo
+
+        const cuboValue = cuboSelect.value;
+        const cantidadValue = cantidadInput.value;
+
+        if (proveedorValue && cuboValue && cantidadValue && Number.isInteger(Number(cantidadValue))) {
+            const row = document.createElement('tr');
+
+            const productoCell = document.createElement('td');
+            productoCell.textContent = cuboSelect.options[cuboSelect.selectedIndex].textContent;
+
+            const cantidadCell = document.createElement('td');
+            cantidadCell.textContent = cantidadValue;
+
+            row.appendChild(productoCell);
+            row.appendChild(cantidadCell);
+
+            tablaCubos.appendChild(row);
+            cubosCount++;
+
+            checkRegistrarBtn();
+
+            proveedorSelect.disabled = true;
+            cuboSelect.selectedIndex = 0;
+            cantidadInput.value = '';
+        }
+    };
+
+    function checkRegistrarBtn() {
+        if (cubosCount > 0) {
+            registrarBtn.disabled = false;
+        } else {
+            registrarBtn.disabled = true;
+        }
+    };
+
+    // Agregar evento para asignar el valor del proveedor deshabilitado al campo oculto idProveedor
+    document.getElementById('registrar-btn').addEventListener('click', function() {
+        const idProveedorInputs = document.querySelectorAll('input[name="idProveedor"]');
+        idProveedorInputs.forEach(function(input) {
+            input.value = proveedorValue;
+        });
+    });
+
+</script>

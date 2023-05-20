@@ -1,0 +1,58 @@
+<div class="container px-5">
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-6">
+            <div class="text-center my-5">
+                <h1 class="display-5 fw-bolder .text-dark-emphasis mb-2">Editar cubo</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container p-0 mb-5">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    {{!--Se configura el método de envío en formularios--}}
+                    <form action="/cubes/edit/{{cube.id}}" method="POST">
+                        <div class="form-group">
+                            <label for="nombre" class="fw-bolder">Nombre</label>
+                            <input type="text" value="{{cube.nombre}}" class="form-control mt-0" name="nombre" placeholder="Nombre" required autofocus>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="marca"  class="fw-bolder">Marca</label>
+                            <input type="text" value="{{cube.marca}}" class="form-control mt-0" name="marca" placeholder="Marca" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="forma" class="fw-bolder">Forma</label>
+                            <input type="text" value="{{cube.forma}}" class="form-control mt-0" name="forma" placeholder="Forma" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descripcion" class="fw-bolder">Descripción</label>
+                            <textarea name="descripcion" rows="2" class="form-control mt-0" placeholder="Descripción" required>{{cube.descripcion}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="precio" class="fw-bolder">Precio</label>
+                            <input type="number" value="{{cube.precio}}" class="form-control mt-0" name="precio" placeholder="Precio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="existencia" class="fw-bolder">Existencia</label>
+                            <input type="number" value="{{cube.existencia}}" class="form-control mt-0" name="existencia" placeholder="Existencia" required>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-success">Editar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
