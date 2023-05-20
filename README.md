@@ -61,7 +61,7 @@ npm run dev
 Una vez ejecutada la aplicación, se podrá entrar desde cualquier navegador a través de la siguiente ruta:
 
 ```
-http://localhost:3000
+http://localhost:3000/
 ```
 
 ## Capturas de pantalla
