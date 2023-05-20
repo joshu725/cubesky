@@ -1,0 +1,44 @@
+<div class="container px-5">
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-6">
+            <div class="text-center my-5">
+                <h1 class="display-5 fw-bolder .text-dark-emphasis mb-2">Editar proveedor</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container p-0 mb-5">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    {{!--Se configura el método de envío en formularios--}}
+                    <form action="/suppliers/edit/{{supplier.id}}" method="POST">
+                        <div class="form-group">
+                            <label for="nombre" class="fw-bolder">Nombre</label>
+                            <input type="text" value="{{supplier.nombre}}" class="form-control mt-0" name="nombre" placeholder="Nombre" required autofocus>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono" class="fw-bolder">Teléfono</label>
+                            <input type="number" value="{{supplier.telefono}}" class="form-control mt-0" name="telefono" placeholder="Teléfono" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="correo" class="fw-bolder">Correo electrónico</label>
+                            <input type="text" value="{{supplier.correo}}" class="form-control mt-0" name="correo" placeholder="Correo electrónico" required>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-success">Editar</button>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
